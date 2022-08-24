@@ -26,8 +26,8 @@ public class App
     	try {
     		con = ds.getConnection();
     		stmt = con.createStatement();
-    		rs = stmt.executeQuery("select empid, name from Employee");
-    		while (rs.next()) System.out.println("Employee ID = " + rs.getInt("empid") + ", Name = " + rs.getString("name"));
+    		rs = stmt.executeQuery("SHOW DATABASES");
+    		while (rs.next()) System.out.println(rs.getString(1));
     	} catch (SQLException e) {
     		e.printStackTrace();
     	} finally {
